@@ -1,0 +1,36 @@
+<header class="header trans_400">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                    <div class="logo"><a href="{% url 'index' %}">Тестовое<span>Django</span></a></div>
+                     <nav class="main_nav ml-auto mr-auto">
+                        <ul class="d-flex flex-row align-items-center justify-content-start">
+
+                            <li class="{% if request.path == '/index/'%}active{% endif %}">
+                                <a href="{% url 'index' %}">Главная</a>
+                            </li>
+                             <li class="{% if request.path == '/register/'%}active{% endif %}">
+                                <a href="{% url 'register' %}">Регистрация</a>
+                            </li> 
+                            {% if request.user.is_authenticated %}
+                            <li class="{% if request.path == '/list/'%}active{% endif %}">
+                                <a href="{% url 'list' %}">Список url</a>
+                            </li> 
+                            {% endif %}
+                            {% if request.user.is_authenticated %}
+                                <li class="{% if request.path == '/logout/'%}active{% endif %}">
+                                    <a href="{% url 'logout' %}">Выход</a>
+                                </li>
+                                {% else %}
+                                <li class="{% if request.path == '/login/'%}active{% endif %}">
+                                    <a href="{% url 'login' %}">Войти</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock title %}Контакты
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/contact.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/contact_responsive.css' %}">
+{% endblock style %}
+
+<body>
+	{% block body %}
+	<div class="home">
+		<div class="home_background"></div>
+		<div class="background_image background_city" style="background-image:url(images/city_5.png)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						{% block home_content %}
+						{% endblock home_content %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 contact_col">
+					<div class="contact_content">
+						<div class="contact_title magic_fade_in">Я знаю пароль</div>
+						<div class="contact_text magic_fade_in">
+							<p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis ege. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue tellus vitae mauris dignissim, id porta purus varius. Suspendisse pharetra tincidunt enim.</p>
+						</div>
+						<div class="contact_logo magic_fade_in"><a href="#">Я вижу<span>Ориентир</span></a></div>
+						<div class="contact_list magic_fade_in">
+							<ul>
+								<li>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis ege. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue tellus vitae mauris dignissim, id porta purus varius. Suspendisse pharetra tincidunt enim.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				{% block contact %}
+				{% endblock contact %}
+			</div>
+		</div>
+	</div>
+
+{% endblock body %}
+
+</body>
+</html>
+
+

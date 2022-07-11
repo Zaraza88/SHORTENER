@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Конкретный продукт{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/about_responsive.css' %}">
+{% endblock style %}
+
+<body>
+{% block body %}
+<div class="super_container">
+	<div class="home">
+		<div class="home_background"></div>
+		<div class="background_image background_city" style="background-image:url(images/city_2.png)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Список измененных url</div>
+							<div class="breadcrumbs">
+								<ul class="d-flex flex-row align-items-center justify-content-start">
+									<li><a href="{% url 'index' %}">Главная</a></li>
+									<li>Список измененных url</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="team">  
+    <div class="container">
+        <div class="row">
+            <div class="col text-center magic_fade_in">
+                <div class="section_title"><h2>{{ user.username }}</h2></div>
+                    <div class="why_list">
+                        <ul>
+                            {% for i in url %}
+                                <li class="d-flex flex-row align-items-center justify-content-start"><div>
+                                </div><h5>{{ i.start_url }} &nbsp;&nbsp;&nbsp;&nbsp; ---> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h3> {{ i.modified_url }}</h3></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>			
+    </div>
+</div>
+
+{% endblock body %}
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'inc/auth_base.html' %}
+
+{% block home_content %}
+    <div class="home_content">
+        <div class="home_title">Регистрация</div>
+        <div class="breadcrumbs">
+            <ul class="d-flex flex-row align-items-center justify-content-start">
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li>Регистрация</li>
+            </ul>
+        </div>
+    </div>
+{% endblock home_content %}
+
+{% block contact %}
+    <div class="col-lg-6 contact_col magic_fade_in">
+        <div class="message_form_container">
+            <div class="contact_title">Регистрация</div>
+            <form action="{% url 'register' %}" id="message_form" class="message_form" method='POST'>
+                {% csrf_token %}
+                <input type="username" class="message_input" placeholder="username" name="username" id='username'>
+                <input type="email" class="message_input" placeholder="email" name="email" id='email'>
+                <input type="password" class="message_input" placeholder="password1" name="password1" id='password1'>
+                <input type="password2" class="message_input" placeholder="password2" name="password2" id='password2'>
+                <button class="message_form_button">Send</button>
+            </form>
+        </div>
+    </div>
+{% endblock contact %}
